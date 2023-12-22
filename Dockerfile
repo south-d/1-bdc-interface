@@ -3,7 +3,7 @@ FROM node:alpine
 WORKDIR /app
 COPY ./package.json /app
 COPY ./package-lock.json /app
-RUN npm i
+RUN npm i --verbose --progress=false
 COPY ./ /app
 ARG SERVICE_URL
 ENV SERVICE_URL=${SERVICE_URL}
